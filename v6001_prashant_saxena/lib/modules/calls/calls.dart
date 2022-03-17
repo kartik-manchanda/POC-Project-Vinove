@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/color.dart';
 import '../../widgets/item_CallList.dart';
+import '../chats/screen_chatContacts.dart';
 
 
 class Calls extends StatefulWidget {
@@ -20,6 +21,7 @@ class _CallsState extends State<Calls> {
           backgroundColor: tabColor,
           child: const Icon(Icons.add_ic_call_rounded, color: Colors.white,),
           onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatContacts(),),);
           }
       ),
 

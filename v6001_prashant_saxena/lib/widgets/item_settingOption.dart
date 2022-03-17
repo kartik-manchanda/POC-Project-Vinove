@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class SettingOption extends StatefulWidget {
   final String title;
   final String? subtitle;
-  final Icon leading;
-  final Icon? trailing;
+  final leading;
+  final trailing;
   final onTap;
   const SettingOption({Key? key,
     required this.title,
     this.subtitle,
     required this.leading,
-    required this.onTap,
+    this.onTap,
     this.trailing,
   }) : super(key: key);
 

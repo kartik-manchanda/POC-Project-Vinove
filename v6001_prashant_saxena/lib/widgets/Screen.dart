@@ -11,7 +11,7 @@ class Screen extends StatelessWidget {
   final persistentFooterButtons;
   const Screen({Key? key,
     required this.title,
-    required this.body,
+    this.body,
     this.floatingActionButton,
     this.bottomSheet,
     this.bottomNavigationBar,

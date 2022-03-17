@@ -80,7 +80,7 @@ const chatdata = [
   },
   {
     "me": true,
-    "text": "hi",
+    "text": "how ar you",
     "time": "00:00"
   },
   {
@@ -115,7 +115,7 @@ const chatdata = [
   },
   {
     "me": false,
-    "text": "hello",
+    "text": "i m fine what abot you",
     "time": "00:00"
   },
   {

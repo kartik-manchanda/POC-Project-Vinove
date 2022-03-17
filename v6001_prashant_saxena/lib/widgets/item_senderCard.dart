@@ -17,7 +17,7 @@ class Sendercard extends StatelessWidget {
       ConstrainedBox(
         constraints: BoxConstraints(
           //to not stick to boundary
-          maxWidth: MediaQuery.of(context).size.width-45,
+          maxWidth: MediaQuery.of(context).size.width-100,
         ),
         child: Card(
           elevation: 1,

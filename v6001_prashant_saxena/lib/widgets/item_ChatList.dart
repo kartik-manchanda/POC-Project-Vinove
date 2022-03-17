@@ -38,7 +38,7 @@ class _ChatListState extends State<ChatList> {
                     title: Text(
                       data[index]['name'].toString(),
                       style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 17,
                         fontWeight: FontWeight.w500
                       ),
                     ),
@@ -46,20 +46,20 @@ class _ChatListState extends State<ChatList> {
                       padding: const EdgeInsets.only(top: 6.0),
                       child: Text(
                         data[index]['message'].toString(),
-                        style: const TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 12),
                       ),
                     ),
                     leading: CircleAvatar(
                       backgroundImage: NetworkImage(
                         data[index]['profilePic'].toString(),
                       ),
-                      radius: 30,
+                      radius: 25,
                     ),
                     trailing: Text(
                       data[index]['time'].toString(),
                       style: const TextStyle(
                         color: Colors.grey,
-                        fontSize: 13,
+                        fontSize: 10,
                       ),
                     ),
                   ),

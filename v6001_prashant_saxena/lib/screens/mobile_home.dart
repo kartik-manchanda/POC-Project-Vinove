@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/constants/localisation/english_text.dart';
+import 'package:v6001_prashant_saxena/modules/popMenu/screen_newBroadcast.dart';
+import 'package:v6001_prashant_saxena/modules/popMenu/screen_newGroup.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_settings.dart';
 
 import '../constants/color.dart';
 import '../modules/calls/calls.dart';
 import '../modules/camera/camera.dart';
 import '../modules/chats/chats.dart';
+import '../modules/popMenu/screen_LinkedDeviceScreen.dart';
 import '../modules/status/status.dart';
 
 class MobileHome extends StatefulWidget {
@@ -38,9 +41,45 @@ class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateM
         ),),
         actions: [
           Icon(Icons.search, color: Colors.grey,),
+
           _selectedIndex==1? PopupMenuButton(
             onSelected: (result){
-              if(result == 6){
+              if(result == 1){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const NewGroupScreen(),
+                  ),
+                );
+              }
+              else if(result == 2){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const NewBroadcastScreen(),
+                  ),
+                );
+              }
+              else if(result == 3){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const LinkedDeviceScreen(),
+                  ),
+                );
+              }
+              else if(result == 4){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsScreen(),
+                  ),
+                );
+              }
+              else if(result == 5){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsScreen(),
+                  ),
+                );
+              }
+              else {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const SettingsScreen(),
@@ -54,7 +93,8 @@ class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateM
                 PopupMenuItem(
                   child: Text(EnglishText.of(context)!.NewGroup),
                   value: 1,
-                ),    PopupMenuItem(
+                ),
+                PopupMenuItem(
                   child: Text(EnglishText.of(context)!.NewBroadcast),
                   value: 2,
                 ),

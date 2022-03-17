@@ -64,7 +64,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(onPressed: (){}, icon: Icon(
-                Icons.crop_square,
+                Icons.qr_code,
                 color: tabColor,
               ),),
             ),
