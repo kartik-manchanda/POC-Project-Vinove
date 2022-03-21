@@ -4,6 +4,7 @@ import 'package:v6001_prashant_saxena/modules/chats/screen_chatContacts.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/english_text.dart';
 import '../../widgets/item_ChatList.dart';
 
 class Chats extends StatelessWidget {
@@ -15,7 +16,7 @@ class Chats extends StatelessWidget {
       body: Column(
         children: [
           ChatList(),
-          SettingOption(title: 'Archived', leading: Icon(Icons.archive_outlined, color: Colors.grey,), trailing: Text('1', style: TextStyle(color: Colors.grey),),
+          SettingOption(title :EnglishText.of(context)!.Archived, leading: Icon(Icons.archive_outlined, color: Colors.grey,), trailing: Text('1', style: TextStyle(color: Colors.grey),),
             onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ArchivedScreen(),),);},)
         ],
       ),

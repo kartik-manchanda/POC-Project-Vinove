@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/english_text.dart';
 
 class NewGroupScreen extends StatelessWidget {
   const NewGroupScreen({Key? key}) : super(key: key);
@@ -24,11 +25,11 @@ class NewGroupScreen extends StatelessWidget {
         title: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Newwhatsapp Contacts',
+              EnglishText.of(context)!.NewWhatsAppContacts,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             Text(
-              'Add Participants',
+              EnglishText.of(context)!.AddParticipants,
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
             ),
           ],

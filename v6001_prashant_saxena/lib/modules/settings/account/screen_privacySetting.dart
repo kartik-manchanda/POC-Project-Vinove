@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants/color.dart';
+import '../../../constants/localisation/english_text.dart';
 
 class PrivacySetting extends StatelessWidget {
   const PrivacySetting({Key? key}) : super(key: key);
@@ -21,8 +22,8 @@ class PrivacySetting extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Privacy', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+        title: Text(
+          EnglishText.of(context)!.Privacy, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),

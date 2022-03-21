@@ -3,6 +3,7 @@ import 'package:v6001_prashant_saxena/modules/settings/account/screen_accountSet
 import 'package:v6001_prashant_saxena/modules/settings/chats/screen_chatsSetting.dart';
 import 'package:v6001_prashant_saxena/modules/settings/help/screen_helpSetting.dart';
 import 'package:v6001_prashant_saxena/modules/settings/notification/screen_notificationSetting.dart';
+import 'package:v6001_prashant_saxena/modules/settings/profile/screen_QRCode.dart';
 import 'package:v6001_prashant_saxena/modules/settings/profile/screen_profileSetting.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_invite.dart';
 import 'package:v6001_prashant_saxena/modules/settings/storage/screen_StorageSetting.dart';
@@ -63,7 +64,9 @@ class SettingsScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 15),
                 ),
               ),
-              trailing: IconButton(onPressed: (){}, icon: Icon(
+              trailing: IconButton(
+                onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const QRCodeScreen(),),);},
+                icon: Icon(
                 Icons.qr_code,
                 color: tabColor,
               ),),

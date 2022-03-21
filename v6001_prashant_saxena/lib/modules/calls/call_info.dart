@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/color.dart';
 import '../../constants/data.dart';
+import '../../constants/localisation/english_text.dart';
 
 class CallInfo extends StatelessWidget {
   const CallInfo({Key? key}) : super(key: key);
@@ -22,8 +23,8 @@ class CallInfo extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Call Info', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+        title: Text(
+          EnglishText.of(context)!.CallInfo, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
         actions: [

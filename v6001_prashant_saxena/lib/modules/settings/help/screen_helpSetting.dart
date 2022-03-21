@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 
 import '../../../constants/color.dart';
+import '../../../constants/localisation/english_text.dart';
 
 class HelpSettings extends StatelessWidget {
   const HelpSettings({Key? key}) : super(key: key);
@@ -22,8 +23,8 @@ class HelpSettings extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Settings', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+        title: Text(
+          EnglishText.of(context)!.Settings, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),

@@ -3,6 +3,7 @@ import 'package:v6001_prashant_saxena/modules/settings/screen_invite.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/english_text.dart';
 
 class ChatContacts extends StatelessWidget {
   const ChatContacts({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class ChatContacts extends StatelessWidget {
         title: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Select Contacts',
+              EnglishText.of(context)!.SelectContacts,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             Text(
@@ -72,10 +73,10 @@ class ChatContacts extends StatelessWidget {
               color: appBarColor,
               icon: Icon(Icons.more_vert),
               itemBuilder: (context) => [
-                PopupMenuItem(child: Text('Invite a friend'), value: 1,),
-                PopupMenuItem(child: Text('Contacts'), value: 2,),
-                PopupMenuItem(child: Text('Refresh'), value: 3,),
-                PopupMenuItem(child: Text('Help'), value: 4,),
+                PopupMenuItem(child: Text(EnglishText.of(context)!.InviteFriend), value: 1,),
+                PopupMenuItem(child: Text(EnglishText.of(context)!.Contacts), value: 2,),
+                PopupMenuItem(child: Text(EnglishText.of(context)!.Refresh), value: 3,),
+                PopupMenuItem(child: Text(EnglishText.of(context)!.Help), value: 4,),
               ]
           )
         ],
@@ -84,11 +85,11 @@ class ChatContacts extends StatelessWidget {
       body: Column(
         children: [
           SettingOption(
-              title: 'New Group',
+              title: EnglishText.of(context)!.NewGroup,
               leading: Icon(Icons.people, color: tabColor,),
           ),
           SettingOption(
-              title: 'New Contact',
+              title: EnglishText.of(context)!.NewContact,
               trailing: Icon(Icons.qr_code),
               leading: Icon(Icons.person_add, color: tabColor,),
           ),

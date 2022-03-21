@@ -3,6 +3,7 @@ import 'package:v6001_prashant_saxena/widgets/item_elevatedbutton.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/english_text.dart';
 
 class LinkedDeviceScreen extends StatelessWidget {
   const LinkedDeviceScreen({Key? key}) : super(key: key);
@@ -23,8 +24,8 @@ class LinkedDeviceScreen extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Linked Device',
+        title: Text(
+          EnglishText.of(context)!.LinkedDevice,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
@@ -39,8 +40,8 @@ class LinkedDeviceScreen extends StatelessWidget {
             child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image.asset('assets/linked_device.png', scale: 3.5,),
-                Text('Use WhatsApp on other devices', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-                MyElevatedButton(onPressed: (){}, child: Text('LINK A DEVICE'), width: 370,)
+                Text(EnglishText.of(context)!.UseWpOnOtherDevice, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                MyElevatedButton(onPressed: (){}, child: Text(EnglishText.of(context)!.LinkADevice), width: 370,)
               ],
             ),
           ),
@@ -48,7 +49,7 @@ class LinkedDeviceScreen extends StatelessWidget {
             padding: EdgeInsets.all(8),
             color: webAppBarColor,
             height: 100,
-            child: SettingOption(title: 'Multi-device beta', leading: Icon(Icons.multitrack_audio), subtitle: 'Use up to 4 devices without keeping your phone online. Tap to Learn more.'),
+            child: SettingOption(title: EnglishText.of(context)!.MultiDeviceBeta, leading: Icon(Icons.multitrack_audio), subtitle: EnglishText.of(context)!.MultiDeviceMsg),
           )
         ],
       ),

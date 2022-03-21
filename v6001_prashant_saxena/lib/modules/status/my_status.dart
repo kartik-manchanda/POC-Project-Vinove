@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/english_text.dart';
 import '../../widgets/item_statusList.dart';
 
 class MyStatus extends StatefulWidget {
@@ -27,8 +28,8 @@ class _MyStatusState extends State<MyStatus> {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'My Status', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+        title: Text(
+          EnglishText.of(context)!.MyStatus, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),

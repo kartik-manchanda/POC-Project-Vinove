@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SettingOption extends StatefulWidget {
   final String title;
-  final String? subtitle;
+  final subtitle;
   final leading;
   final trailing;
   final onTap;

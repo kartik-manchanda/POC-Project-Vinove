@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/modules/chats/archived/screen_archivedSetting.dart';
 import '../../../constants/color.dart';
+import '../../../constants/localisation/english_text.dart';
 
 class ArchivedScreen extends StatelessWidget {
   const ArchivedScreen({Key? key}) : super(key: key);
@@ -21,8 +22,8 @@ class ArchivedScreen extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Archived',
+        title: Text(
+          EnglishText.of(context)!.Archived,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/english_text.dart';
 import '../camera/camera.dart';
 import 'my_status.dart';
 
@@ -29,10 +30,10 @@ class _StatusState extends State<Status> {
             ),
           );
         },
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsets.only(top: 8),
           child: ListTile(
-            title: Text('My Status',
+            title: Text(EnglishText.of(context)!.MyStatus,
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500

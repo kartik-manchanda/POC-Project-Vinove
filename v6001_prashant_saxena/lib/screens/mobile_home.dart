@@ -3,12 +3,14 @@ import 'package:v6001_prashant_saxena/constants/localisation/english_text.dart';
 import 'package:v6001_prashant_saxena/modules/popMenu/screen_newBroadcast.dart';
 import 'package:v6001_prashant_saxena/modules/popMenu/screen_newGroup.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_settings.dart';
+import 'package:v6001_prashant_saxena/widgets/item_alertDialog.dart';
 
 import '../constants/color.dart';
 import '../modules/calls/calls.dart';
 import '../modules/camera/camera.dart';
 import '../modules/chats/chats.dart';
 import '../modules/popMenu/screen_LinkedDeviceScreen.dart';
+import '../modules/status/screen_statusPrivacy.dart';
 import '../modules/status/status.dart';
 
 class MobileHome extends StatefulWidget {
@@ -21,11 +23,13 @@ class MobileHome extends StatefulWidget {
 class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateMixin {
   late TabController _tabController;
   int _selectedIndex=0;
+
   @override
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: 4);
 }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -116,6 +120,22 @@ class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateM
                 ),
               ]):
           _selectedIndex==2 ?PopupMenuButton(
+              onSelected: (result){
+                if(result == 1){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const StatusPrivacyScreen(),
+                    ),
+                  );
+                }
+                else {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsScreen(),
+                    ),
+                  );
+                }
+              },
               color: appBarColor,
               icon: Icon(Icons.more_vert, color: Colors.grey,),
               itemBuilder: (context) => [
@@ -136,6 +156,24 @@ class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateM
                 )
               ]):
           PopupMenuButton(
+              onSelected: (result){
+                if(result == 1){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const MyAlertDialogue(
+                          title: 'Do you want to clear your entire log',
+                          content: 'content', opt1: 'CANCEL', opt2: 'OK'),
+                    ),
+                  );
+                }
+                else {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsScreen(),
+                    ),
+                  );
+                }
+              },
               color: appBarColor,
               icon: Icon(Icons.more_vert, color: Colors.grey,),
               itemBuilder: (context) => [
@@ -158,7 +196,6 @@ class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateM
 
         ],
         bottom: TabBar(
-          physics: NeverScrollableScrollPhysics(),
           onTap: (int selected){
             setState(() {
               _selectedIndex=selected;
@@ -175,10 +212,11 @@ class _MobileHomeState extends State<MobileHome> with SingleTickerProviderStateM
             Tab(text: EnglishText.of(context)!.Chats),
             Tab(text: EnglishText.of(context)!.Status),
             Tab(text: EnglishText.of(context)!.Calls),
-          ],),
+          ],
+        ),
       ),
 
-      body: TabBarView(
+      body: const TabBarView(
         children: [
           Camera(),
           Chats(),
