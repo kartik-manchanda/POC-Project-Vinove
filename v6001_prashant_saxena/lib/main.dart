@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_settings.dart';
 import 'package:v6001_prashant_saxena/screens/mobile_home.dart';
 import 'package:v6001_prashant_saxena/screens/web_home.dart';
-
 import 'constants/color.dart';
 import 'constants/localisation/app_localization_deligate.dart';
 import 'constants/responsiveness.dart';
@@ -24,11 +23,14 @@ class MyApp extends StatelessWidget {
       //   Locale('En',''),
       //   Locale('Fr',''),
       // ],
+
+      // march 21
       localizationsDelegates: [
         DefaultMaterialLocalizations.delegate,
         DefaultWidgetsLocalizations.delegate,
-        AppLocalizationDelegate()
+        AppLocalizationsDelegate()
       ],
+
       // localeResolutionCallback: (locale, supportedLocales) {
       //   for (var supportedLocale in supportedLocales) {
       //     if (supportedLocale.languageCode == locale?.languageCode) {

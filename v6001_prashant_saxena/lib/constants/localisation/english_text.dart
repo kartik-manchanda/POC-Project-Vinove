@@ -4,12 +4,6 @@ import 'strings.dart';
 
 class EnglishText extends Strings {
 
-
-  static Strings? of(BuildContext context) {
-    return Localizations.of<Strings>(context, Strings);
-  }
-
-
   @override
   String get WhatsApp => "WhatsApp";
 
@@ -186,6 +180,11 @@ class EnglishText extends Strings {
   @override
   // TODO: implement TermsAndPrivacyPolicy
   String get TermsAndPrivacyPolicy => throw UnimplementedError();
+
+  static Strings? of(BuildContext context) {
+    return Localizations.of<Strings>(context, Strings);
+  }
+
 
 }
 

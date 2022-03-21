@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 abstract class Strings {
   String get WhatsApp;
   String get Chats;
