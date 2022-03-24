@@ -3,6 +3,7 @@ import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 
 import '../../../constants/color.dart';
 import '../../../constants/localisation/english_text.dart';
+import '../../../constants/localisation/strings.dart';
 
 class HelpSettings extends StatelessWidget {
   const HelpSettings({Key? key}) : super(key: key);
@@ -24,16 +25,16 @@ class HelpSettings extends StatelessWidget {
           color: Colors.white, //change your color here
         ),
         title: Text(
-          EnglishText.of(context)!.Settings, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+          Strings.of(context)!.Settings, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),
       body: Column(
         children: [
-          SettingOption(title: 'Help Centre',leading: Icon(Icons.help_outline_outlined, color: Colors.grey,), onTap: (){}),
-          SettingOption(title: 'Contact us', subtitle: 'Questions? Need Help?', leading: Icon(Icons.people, color: Colors.grey,), onTap: (){}),
-          SettingOption(title: 'Terms and Privacy Policy', leading: Icon(Icons.note, color: Colors.grey,), onTap: (){}),
-          SettingOption(title: 'App info', leading: Icon(Icons.people, color: Colors.grey,), onTap: (){}),
+          SettingOption(title: Strings.of(context)!.HelpCentre,leading: Icon(Icons.help_outline_outlined, color: Colors.grey,), onTap: (){}),
+          SettingOption(title: Strings.of(context)!.ContactUs, subtitle: Strings.of(context)!.QuestionsNeedHelp, leading: Icon(Icons.people, color: Colors.grey,), onTap: (){}),
+          SettingOption(title: Strings.of(context)!.TermsAndPrivacyPolicy, leading: Icon(Icons.note, color: Colors.grey,), onTap: (){}),
+          SettingOption(title: Strings.of(context)!.AppInfo, leading: Icon(Icons.people, color: Colors.grey,), onTap: (){}),
         ],
       ),
     );

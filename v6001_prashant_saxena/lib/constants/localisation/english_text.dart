@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import 'strings.dart';
 
 class EnglishText extends Strings {
@@ -71,7 +69,7 @@ class EnglishText extends Strings {
 
   @override
   // TODO: implement SelectContacts
-  String get SelectContacts => 'Selected Contacts';
+  String get SelectContacts => 'Contacts';
 
   @override
   // TODO: implement Contacts
@@ -159,7 +157,7 @@ class EnglishText extends Strings {
 
   @override
   // TODO: implement AppLang
-  String get AppLang => 'App Languge';
+  String get AppLang => 'App Language';
 
   @override
   // TODO: implement AppInfo
@@ -179,12 +177,42 @@ class EnglishText extends Strings {
 
   @override
   // TODO: implement TermsAndPrivacyPolicy
-  String get TermsAndPrivacyPolicy => throw UnimplementedError();
+  String get TermsAndPrivacyPolicy => 'Terms and Privacy Policy';
 
-  static Strings? of(BuildContext context) {
-    return Localizations.of<Strings>(context, Strings);
-  }
+  @override
+  // TODO: implement English
+  String get English => 'English';
 
+  @override
+  // TODO: implement French
+  String get French => 'French';
+
+  @override
+  // TODO: implement French
+  String get Notification => 'Notification';
+
+  @override
+  // TODO: implement StorageAndData
+  String get StorageAndData => "Storage and Data";
+
+  @override
+  // TODO: implement ChatHint
+  String get ChatHint => 'Theme, wallpaper, chat history';
+
+  @override
+  // TODO: implement HelpHint
+  String get HelpHint => 'Help centre, contact us, privacy policy';
+
+  @override
+  // TODO: implement StorageHint
+  String get StorageHint => 'Network usage, auto-download';
+
+  @override
+  // TODO: implement NotificationHint
+  String get NotificationHint => 'Message, group & call tone';
+
+  @override
+  // TODO: implement AccountHint
+  String get AccountHint => 'Privacy, security, change number';
 
 }
-

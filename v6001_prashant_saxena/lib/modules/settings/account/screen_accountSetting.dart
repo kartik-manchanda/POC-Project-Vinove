@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_changeNumber.dart';
 import 'package:v6001_prashant_saxena/modules/settings/account/screen_privacySetting.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
-
 import '../../../constants/color.dart';
+import '../../../constants/localisation/strings.dart';
 
 class AccountSetting extends StatelessWidget {
   const AccountSetting({Key? key}) : super(key: key);
@@ -24,8 +24,8 @@ class AccountSetting extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Account',
+        title:  Text(
+          Strings.of(context)!.Account,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
@@ -33,7 +33,7 @@ class AccountSetting extends StatelessWidget {
       body: Column(
         children: [
           SettingOption(
-              title: 'Privacy',
+              title: Strings.of(context)!.Privacy,
               leading: Icon(
                 Icons.lock,
                 color: Colors.grey,
@@ -46,7 +46,7 @@ class AccountSetting extends StatelessWidget {
                 );
               }),
           SettingOption(
-              title: 'Security',
+              title: Strings.of(context)!.Privacy,
               leading: Icon(
                 Icons.shield,
                 color: Colors.grey,
@@ -59,7 +59,7 @@ class AccountSetting extends StatelessWidget {
                 );
               }),
           SettingOption(
-              title: 'Two-step verification',
+              title: Strings.of(context)!.TwoStepVerification,
               leading: Icon(
                 Icons.more_horiz_rounded,
                 color: Colors.grey,
@@ -72,7 +72,7 @@ class AccountSetting extends StatelessWidget {
                 );
               }),
           SettingOption(
-              title: 'Change Number',
+              title: Strings.of(context)!.ChangeNumber,
               leading: Icon(
                 Icons.phone_android_sharp,
                 color: Colors.grey,
@@ -85,7 +85,7 @@ class AccountSetting extends StatelessWidget {
                 );
               }),
           SettingOption(
-              title: 'Request account info',
+              title: Strings.of(context)!.RequestAcoountInfo,
               leading: Icon(
                 Icons.note_outlined,
                 color: Colors.grey,
@@ -98,7 +98,7 @@ class AccountSetting extends StatelessWidget {
                 );
               }),
           SettingOption(
-              title: 'Delete my account',
+              title: Strings.of(context)!.DeleteMyAccount,
               leading: Icon(
                 Icons.delete,
                 color: Colors.grey,

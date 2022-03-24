@@ -1,54 +1,98 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_settings.dart';
 import 'package:v6001_prashant_saxena/screens/mobile_home.dart';
 import 'package:v6001_prashant_saxena/screens/web_home.dart';
 import 'constants/color.dart';
 import 'constants/localisation/app_localization_deligate.dart';
+import 'constants/prefrences.dart';
 import 'constants/responsiveness.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'modules/register/screen_landing.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  Preference.load().then((value) {
+    runApp(MyApp());
+  });
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  static void setLocale(BuildContext context, Locale newLocale) {
+    var state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(newLocale);
+  }
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale? _locale;
+
+  void setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
+
+  @override
+  void initState() {
+    var lang = Preference.getString(Preference.language, def: "en");
+    _locale = Locale(lang ?? "en");
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    var lang = Preference.getString(Preference.language, def: "en");
+    _locale = Locale(lang ?? "en");
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WhatsApp Clone',
-      // locale: _locale,
-      // supportedLocales: [
-      //   Locale('En',''),
-      //   Locale('Fr',''),
-      // ],
-
-      // march 21
-      localizationsDelegates: [
-        DefaultMaterialLocalizations.delegate,
-        DefaultWidgetsLocalizations.delegate,
-        AppLocalizationsDelegate()
+      locale: _locale,
+      supportedLocales: [
+        Locale('en', ''),
+        Locale('fr', ''),
       ],
-
-      // localeResolutionCallback: (locale, supportedLocales) {
-      //   for (var supportedLocale in supportedLocales) {
-      //     if (supportedLocale.languageCode == locale?.languageCode) {
-      //       _locale = supportedLocale;
-      //       return supportedLocale;
-      //     }
-      //   }
-      //   return supportedLocales.first;
-      // },
+      localizationsDelegates: [
+        AppLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale?.languageCode) {
+            _locale = supportedLocale;
+            return supportedLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
       // home: const Splash(),
-      home: const Responsive(mobile_homeLayout: MobileHome(), web_homeLayout: WebHome(),),
-      //   home: Settings(),
+
+
+      home: const Responsive(
+        mobile_homeLayout: MobileHome(),
+        web_homeLayout: WebHome(),
+      ),
+
+
+      // home: Settings(),
+      // home: DummyContactScreen(),
+      // home: LandingScreen(),
     );
-
-
   }
 }

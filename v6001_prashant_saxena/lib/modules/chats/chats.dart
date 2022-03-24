@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/modules/chats/archived/screen_archived.dart';
-import 'package:v6001_prashant_saxena/modules/chats/screen_chatContacts.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
-
 import '../../constants/color.dart';
-import '../../constants/localisation/english_text.dart';
+import '../../constants/localisation/strings.dart';
+import '../../contacts/screens/screen_contact.dart';
 import '../../widgets/item_ChatList.dart';
 
 class Chats extends StatelessWidget {
@@ -16,7 +15,7 @@ class Chats extends StatelessWidget {
       body: Column(
         children: [
           ChatList(),
-          SettingOption(title :EnglishText.of(context)!.Archived, leading: Icon(Icons.archive_outlined, color: Colors.grey,), trailing: Text('1', style: TextStyle(color: Colors.grey),),
+          SettingOption(title :Strings.of(context)!.Archived, leading: Icon(Icons.archive_outlined, color: Colors.grey,), trailing: Text('1', style: TextStyle(color: Colors.grey),),
             onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ArchivedScreen(),),);},)
         ],
       ),
@@ -24,7 +23,7 @@ class Chats extends StatelessWidget {
           backgroundColor: tabColor,
           child: const Icon(Icons.message, color: Colors.white,),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatContacts(),),);
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ContactScreen(),),);
           }
       ),
 

@@ -7,10 +7,12 @@ import 'package:v6001_prashant_saxena/modules/settings/profile/screen_QRCode.dar
 import 'package:v6001_prashant_saxena/modules/settings/profile/screen_profileSetting.dart';
 import 'package:v6001_prashant_saxena/modules/settings/screen_invite.dart';
 import 'package:v6001_prashant_saxena/modules/settings/storage/screen_StorageSetting.dart';
+import 'package:v6001_prashant_saxena/scratch.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 import 'package:v6001_prashant_saxena/widgets/item_metaLogo.dart';
 
 import '../../constants/color.dart';
+import '../../constants/localisation/strings.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -32,8 +34,8 @@ class SettingsScreen extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
-        title: const Text(
-          'Settings', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+        title:  Text(
+          Strings.of(context)!.Settings, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),
@@ -74,37 +76,37 @@ class SettingsScreen extends StatelessWidget {
           ),
           Divider(endIndent: 5,indent: 5,),
           SettingOption(
-              title: 'Account',
-              subtitle: 'Privacy, security, change number',
+              title: Strings.of(context)!.Account,
+              subtitle:  Strings.of(context)!.AccountHint,
               leading: Icon(Icons.vpn_key_rounded),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AccountSetting(),),);}
           ),
           SettingOption(
-              title: 'Chats',
-              subtitle: 'Theme, wallpaper, chat history',
+              title: Strings.of(context)!.Chats,
+              subtitle: Strings.of(context)!.ChatHint,
               leading: Icon(Icons.chat_sharp),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatsSetting(),),);}
           ),
           SettingOption(
-              title: 'Notifications',
-              subtitle: 'Message, grooup & call tone',
+              title: Strings.of(context)!.Notification,
+              subtitle: Strings.of(context)!.NotificationHint,
               leading: Icon(Icons.notifications),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationSetting(),),);}
           ),
           SettingOption(
-              title: 'Storage and Data',
-              subtitle: 'Network usage, auto-download',
+              title:  Strings.of(context)!.StorageAndData,
+              subtitle:  Strings.of(context)!.StorageHint,
               leading: Icon(Icons.storage),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const StorageSetting(),),);}
           ),
           SettingOption(
-              title: 'Help',
-              subtitle: 'Help centre, contact us, privacy policy',
+              title:  Strings.of(context)!.Help,
+              subtitle:  Strings.of(context)!.HelpHint,
               leading: Icon(Icons.help_outline_outlined),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HelpSettings(),),);}
           ),
           SettingOption(
-              title: 'Invite a friend',
+              title: Strings.of(context)!.InviteFriend,
               leading: Icon(Icons.call),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const  InvitePage(),),);}
           ),

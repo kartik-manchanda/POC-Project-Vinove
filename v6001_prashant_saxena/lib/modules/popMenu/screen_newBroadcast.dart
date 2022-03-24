@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../constants/color.dart';
-import '../../constants/localisation/english_text.dart';
+import '../../constants/localisation/strings.dart';
 
 class NewBroadcastScreen extends StatelessWidget {
   const NewBroadcastScreen({Key? key}) : super(key: key);
@@ -25,7 +24,7 @@ class NewBroadcastScreen extends StatelessWidget {
         title: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              EnglishText.of(context)!.NewBroadcast,
+              Strings.of(context)!.NewBroadcast,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             Text(
@@ -43,7 +42,7 @@ class NewBroadcastScreen extends StatelessWidget {
       body: Column(crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(alignment: Alignment.center,padding: EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 10),
-            child: Text(EnglishText.of(context)!.NewBroadcastMsg,
+            child: Text(Strings.of(context)!.NewBroadcastMsg,
             style: TextStyle(
               color: Colors.grey,
               fontSize: 12

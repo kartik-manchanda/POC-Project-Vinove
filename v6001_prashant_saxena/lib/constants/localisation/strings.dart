@@ -2,9 +2,13 @@ import 'package:flutter/widgets.dart';
 
 abstract class Strings {
   String get WhatsApp;
+  String get French;
+  String get English;
   String get Chats;
   String get Status;
   String get Calls;
+  String get StorageAndData;
+  String get Notification;
   String get NewGroup;
   String get NewBroadcast;
   String get LinkedDevice;
@@ -46,9 +50,14 @@ abstract class Strings {
   String get QuestionsNeedHelp;
   String get TermsAndPrivacyPolicy;
   String get AppInfo;
+  String get ChatHint;
+  String get AccountHint;
+  String get NotificationHint;
+  String get StorageHint;
+  String get HelpHint;
 
 
-  // static Strings? of(BuildContext context) {
-  //   return Localizations.of<Strings>(context, Strings);
-  // }
+  static Strings? of(BuildContext context) {
+    return Localizations.of<Strings>(context, Strings);
+  }
 }

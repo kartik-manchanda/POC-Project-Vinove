@@ -4,6 +4,7 @@ import 'package:v6001_prashant_saxena/widgets/item_alertDialog.dart';
 
 import '../../../constants/color.dart';
 import '../../../constants/localisation/english_text.dart';
+import '../../../constants/localisation/strings.dart';
 
 class QRCodeScreen extends StatelessWidget {
   const QRCodeScreen({Key? key}) : super(key: key);
@@ -37,15 +38,12 @@ class QRCodeScreen extends StatelessWidget {
             PopupMenuButton(
                 onSelected: (result){
                   if(result == 1){
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => MyAlertDialogue(
-                            title: 'Reset QR code?',
-                            content: 'Your existing QR code will no longer work.',
-                            opt1: 'KEEP', opt2: 'RESET'
-                        )
-                      ),
-                    );
+                    showDialog(
+                        context: context,  builder: (context) => MyAlertDialogue(
+                        title: 'Reset QR code?',
+                        content: 'Your existing QR code will no longer work.',
+                        opt1: 'KEEP', opt2: 'RESET'
+                    ));
                   }
                 },
                 color: appBarColor,
@@ -68,8 +66,8 @@ class QRCodeScreen extends StatelessWidget {
             indicatorWeight: 3,
             labelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),
             tabs: [
-              Tab(text: EnglishText.of(context)!.Status),
-              Tab(text: EnglishText.of(context)!.Calls),
+              Tab(text: Strings.of(context)!.Status),
+              Tab(text: Strings.of(context)!.Calls),
             ],
           ),
         ),

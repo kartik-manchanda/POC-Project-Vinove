@@ -28,7 +28,7 @@ class MyElevatedButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: tabColor,
+          color: messageColor,
           borderRadius: borderRadius,
         ),
         child: ElevatedButton(

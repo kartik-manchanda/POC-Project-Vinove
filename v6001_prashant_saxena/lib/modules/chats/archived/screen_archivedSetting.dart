@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 import 'package:v6001_prashant_saxena/widgets/item_toogleButton.dart';
-
 import '../../../constants/color.dart';
-import '../../../constants/localisation/english_text.dart';
+import '../../../constants/localisation/strings.dart';
 
 class ArchivedSetting extends StatelessWidget {
   const ArchivedSetting({Key? key}) : super(key: key);
@@ -25,14 +24,14 @@ class ArchivedSetting extends StatelessWidget {
           color: Colors.white, //change your color here
         ),
         title: Text(
-          EnglishText.of(context)!.ArchivedSetting,
+          Strings.of(context)!.ArchivedSetting,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: SettingOption(title: EnglishText.of(context)!.KeepChatsArchived, leading: null, trailing: MyToogleButton(), subtitle: EnglishText.of(context)!.ArchivedScreenMsg,),
+        child: SettingOption(title: Strings.of(context)!.KeepChatsArchived, leading: null, trailing: MyToogleButton(), subtitle: Strings.of(context)!.ArchivedScreenMsg,),
       ),
     );
   }

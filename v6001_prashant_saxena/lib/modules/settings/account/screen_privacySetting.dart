@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:v6001_prashant_saxena/constants/localisation/strings.dart';
 
 import '../../../constants/color.dart';
 import '../../../constants/localisation/english_text.dart';
@@ -23,7 +24,7 @@ class PrivacySetting extends StatelessWidget {
           color: Colors.white, //change your color here
         ),
         title: Text(
-          EnglishText.of(context)!.Privacy, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+          Strings.of(context)!.Privacy, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
         backgroundColor: appBarColor,
       ),

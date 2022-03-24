@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../constants/color.dart';
-import '../../constants/localisation/english_text.dart';
+import '../../constants/localisation/strings.dart';
 import '../camera/camera.dart';
 import 'my_status.dart';
 
@@ -33,7 +32,7 @@ class _StatusState extends State<Status> {
         child: Padding(
           padding: EdgeInsets.only(top: 8),
           child: ListTile(
-            title: Text(EnglishText.of(context)!.MyStatus,
+            title: Text(Strings.of(context)!.MyStatus,
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500
