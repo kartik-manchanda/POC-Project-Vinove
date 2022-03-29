@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:v6001_prashant_saxena/constants/theme/change_theme_button_widget.dart';
 import '../../../constants/color.dart';
 import '../../../constants/localisation/strings.dart';
 import '../../../constants/prefrences.dart';
@@ -42,6 +43,7 @@ class _ChatsSettingState extends State<ChatsSetting> {
       ),
       body: Column(
         children: [
+          ChangeThemeButtonWidget(),
           SettingOption(
               title: Strings.of(context)!.AppLang, leading: Icon(CupertinoIcons.globe, color: Colors.grey,), subtitle: 'Phone Language',
               onTap: (){
@@ -94,34 +96,3 @@ class _ChatsSettingState extends State<ChatsSetting> {
     );
   }
 }
-
-/*SettingOption(
-          title: Strings.of(context)!.AppLang, leading: Icon(CupertinoIcons.globe, color: Colors.grey,), subtitle: 'Phone Language',
-          onTap: (){
-            PopupMenuButton(
-                onSelected: (result) {
-                  if (result == 1) {
-
-                    MyApp.setLocale(context, Locale("en"));
-                    Preference.setString(Preference.language, "en");
-
-                  } else {
-                    MyApp.setLocale(context, Locale("fr"));
-                    Preference.setString(Preference.language, "fr");
-                  }
-                },
-                itemBuilder: (context) => [
-
-              PopupMenuItem(
-                child: Text('English'),
-                value: 1,
-              ),
-              PopupMenuItem(
-                child: Text('French'),
-                value: 2,
-              ),
-            ]);
-          }),*/
-
-
-/**/

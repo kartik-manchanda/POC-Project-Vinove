@@ -6,6 +6,7 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:v6001_prashant_saxena/constants/color.dart';
+import 'package:v6001_prashant_saxena/modules/chats/chat_fire/user_name.dart';
 import 'package:v6001_prashant_saxena/screens/mobile_home.dart';
 
 class OtpPage extends StatefulWidget {
@@ -141,7 +142,7 @@ class _OtpPageState extends State<OtpPage> {
               print("otp check$otp");
               await verifyOTP(otp);
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => MobileHome()));
+                  .push(MaterialPageRoute(builder: (context) => UserName()));
             },
             style: ElevatedButton.styleFrom(
                 primary: tabColor,
