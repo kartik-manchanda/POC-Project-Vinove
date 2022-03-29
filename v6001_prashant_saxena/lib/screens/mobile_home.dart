@@ -236,7 +236,7 @@ class _MobileHomeState extends State<MobileHome>
           body: TabBarView(
             children: [
               Camera(),
-              PeopleList(),
+              Chats(),
               Status(),
               Calls(),
             ],

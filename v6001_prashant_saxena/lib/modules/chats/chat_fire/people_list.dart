@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/constants/color.dart';
 
+import '../../../constants/data.dart';
 import 'chat_detail.dart';
 
 class PeopleList extends StatelessWidget {
@@ -25,7 +26,8 @@ class PeopleList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder<QuerySnapshot>(
+      body:
+      StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
               .collection("users")
               .where('uid', isNotEqualTo: currentUser)
@@ -58,41 +60,41 @@ class PeopleList extends StatelessWidget {
                     DocumentSnapshot people = snapshot.data!.docs[index];
                     print("peopleList$people");
 
-                    return ListTile(
+                    return
+                    ListTile(
                       onTap: () {
                         callChatDetailScreen(
                             context, people['name'], people['uid']);
                       },
                       title: Text(
                         people['name'].toString(),
-                        style: TextStyle(
-                            color: Colors.black, fontSize: 14),
+                        style: const TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500
+                        ),
+                      ),
+                      /*subtitle: Padding(
+                        padding: const EdgeInsets.only(top: 6.0),
+                        child: Text(
+                          data[index]['message'].toString(),
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ),*/
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          data[index]['profilePic'].toString(),
+                        ),
+                        radius: 25,
+                      ),
+                      trailing: Text(
+                        data[index]['time'].toString(),
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 10,
+                        ),
                       ),
                     );
                   });
-              // return CustomScrollView(
-              //   slivers: [
-              //     CupertinoSliverNavigationBar(
-              //       largeTitle: Text("People"),
-              //     ),
-              //     SliverList(
-              //       delegate: SliverChildListDelegate(
-              //         snapshot.data!.docs.map(
-              //               (DocumentSnapshot document) {
-              //             Map<String, dynamic> data = document.data()!;
-              //             return CupertinoListTile(
-              //               onTap: () => callChatDetailScreen(
-              //                   context, data['name'], data['uid']),
-              //               title: Text(data['name']),
-              //               subtitle: Text(data['status']),
-              //             );
-              //           },
-              //         ).toList(),
-              //       ),
-              //     )
-              //   ],
-              // );
-
             }
             return Container(
               color: Colors.red,
