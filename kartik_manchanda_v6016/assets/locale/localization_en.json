@@ -1,0 +1,29 @@
+{
+"tab_chats": "Chats",
+"tab_status": "Status",
+"tab_call": "Call",
+"appName": "WhatsApp",
+
+
+  "menu_1_1": "New group",
+  "menu_1_2": "New broadcast",
+  "menu_1_3": "Linked devices",
+  "menu_1_4": "starred messages",
+  "menu_1_5": "Payments",
+  "menu_1_6": "Settings",
+
+
+
+  "menu_2_1": "status privacy",
+  "menu_2_2": "Settings",
+
+  "menu_3_1": "Clear call log",
+  "menu_3_2": "Settings",
+
+  "my_status": "My Status",
+  "add_status": "Tap to add status update"
+
+
+
+
+}

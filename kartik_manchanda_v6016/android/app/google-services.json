@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1010964065002",
+    "project_id": "watsappclone-1eedd",
+    "storage_bucket": "watsappclone-1eedd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010964065002:android:143dd1b961f31f89a24593",
+        "android_client_info": {
+          "package_name": "com.example.kartik_manchanda_v6016"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010964065002-8c6v1cki1bu155u2hqg3f37vqr235iuh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG4pqWaja8O18IvkI1noS3leMWx9YpGGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010964065002-8c6v1cki1bu155u2hqg3f37vqr235iuh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

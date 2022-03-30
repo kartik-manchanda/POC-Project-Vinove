@@ -1,0 +1,27 @@
+{
+  "tab_chats": "charlas",
+  "tab_status": "estado",
+  "tab_call": "llamada",
+  "appName": "WhatsApp",
+
+
+  "menu_1_1": "Nuevo grupo",
+  "menu_1_2": "Nueva emisión",
+  "menu_1_3": "Dispositivos vinculados",
+  "menu_1_4": "mensajes destacados",
+  "menu_1_5": "Pagos",
+  "menu_1_6": "Ajustes",
+
+
+
+  "menu_2_1": "estado de privacidad",
+  "menu_2_2": "Ajustes",
+
+  "menu_3_1": "Borrar registro de llamadas",
+  "menu_3_2": "Ajustes",
+
+  "my_status": "Mi estado",
+  "add_status": "Toque para agregar una actualización de estado"
+
+
+}
