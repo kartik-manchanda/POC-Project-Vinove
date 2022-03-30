@@ -13,10 +13,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'constants/theme/theme_provider.dart';
 import 'modules/register/screen_landing.dart';
+import 'modules/settings/chats/screen_chatsSetting.dart';
 
-void main() {
+int ?initScreen = 0;
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
+  //login skip
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  initScreen = prefs.getInt("initScreen");
+  await prefs.setInt("initScreen", 1);
+
   Preference.load().then((value) {
     runApp(MyApp());
   });
@@ -97,6 +104,10 @@ class _MyAppState extends State<MyApp> {
 
           // home: const Splash(),
 
+          home: initScreen == 0 || initScreen == null
+              ? LandingScreen()
+              : MobileHome(),
+
 
           // home: const Responsive(
           //   mobile_homeLayout: MobileHome(),
@@ -106,7 +117,7 @@ class _MyAppState extends State<MyApp> {
 
           // home: Settings(),
           // home: DummyContactScreen(),
-          home: LandingScreen(),
+          // home: LandingScreen(),
         );
       },
 

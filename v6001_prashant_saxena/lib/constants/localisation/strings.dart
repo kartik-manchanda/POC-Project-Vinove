@@ -55,6 +55,9 @@ abstract class Strings {
   String get NotificationHint;
   String get StorageHint;
   String get HelpHint;
+  String get Theme;
+  String get Dark;
+  String get Light;
 
 
   static Strings? of(BuildContext context) {

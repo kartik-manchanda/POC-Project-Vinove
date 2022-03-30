@@ -7,7 +7,6 @@ import 'package:v6001_prashant_saxena/widgets/item_alertDialog.dart';
 import '../constants/color.dart';
 import '../modules/calls/calls.dart';
 import '../modules/camera/camera.dart';
-import '../modules/chats/chat_fire/people_list.dart';
 import '../modules/chats/chats.dart';
 import '../modules/popMenu/screen_LinkedDeviceScreen.dart';
 import '../modules/status/screen_statusPrivacy.dart';
@@ -39,7 +38,7 @@ class _MobileHomeState extends State<MobileHome>
         initialIndex: 1,
         child: Scaffold(
           appBar:
-          AppBar(
+          AppBar(automaticallyImplyLeading: false,
             backgroundColor: appBarColor,
             title: Text(
               Strings.of(context)!.WhatsApp,

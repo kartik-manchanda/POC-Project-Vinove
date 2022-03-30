@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:v6001_prashant_saxena/constants/color.dart';
-import 'package:v6001_prashant_saxena/contacts/screens/screen_editContact.dart';
-import 'package:v6001_prashant_saxena/contacts/screens/screen_contactDetail.dart';
-
+import 'package:v6001_prashant_saxena/modules/contacts/screen_contactDetail.dart';
+import 'package:v6001_prashant_saxena/modules/contacts/screen_editContact.dart';
 import '../../constants/localisation/strings.dart';
-import '../../modules/settings/screen_invite.dart';
-import '../database/contacts_database.dart';
-import '../model/contact.dart';
-import '../widgets/item_contactCard.dart';
+import '../../widgets/item_contactCard.dart';
+import '../settings/screen_invite.dart';
+import 'database/contacts_database.dart';
+import 'model/contact.dart';
 class ContactScreen extends StatefulWidget {
   const ContactScreen({Key? key}) : super(key: key);
 

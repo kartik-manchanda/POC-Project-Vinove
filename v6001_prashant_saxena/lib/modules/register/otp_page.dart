@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:v6001_prashant_saxena/constants/color.dart';
 import 'package:v6001_prashant_saxena/modules/chats/chat_fire/user_name.dart';
 import 'package:v6001_prashant_saxena/screens/mobile_home.dart';
@@ -28,11 +29,13 @@ class _OtpPageState extends State<OtpPage> {
   OtpFieldController otpController = OtpFieldController();
 
   Future<void> verifyOTP(String otp) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: widget.verificationID, smsCode: otp);
 
-    await auth.signInWithCredential(credential).then((value) {
+    await auth.signInWithCredential(credential).then((value) async{
       print("You are logged in successfully");
+      await prefs.setInt("initScreen", 1);
       Fluttertoast.showToast(
           msg: "You are logged in successfully",
           toastLength: Toast.LENGTH_SHORT,

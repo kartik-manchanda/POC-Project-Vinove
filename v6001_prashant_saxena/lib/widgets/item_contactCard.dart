@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:v6001_prashant_saxena/constants/color.dart';
 
-import '../../constants/localisation/strings.dart';
-import '../../widgets/item_settingOption.dart';
-import '../model/contact.dart';
+import '../modules/contacts/model/contact.dart';
+
 
 final _lightColors = [
   backgroundColor,

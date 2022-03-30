@@ -215,4 +215,16 @@ class EnglishText extends Strings {
   // TODO: implement AccountHint
   String get AccountHint => 'Privacy, security, change number';
 
+  @override
+  // TODO: implement Dark
+  String get Dark => 'Dark';
+
+  @override
+  // TODO: implement Light
+  String get Light => 'Light';
+
+  @override
+  // TODO: implement Theme
+  String get Theme =>'Theme';
+
 }

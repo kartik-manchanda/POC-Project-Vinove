@@ -216,4 +216,16 @@ class FrenchText extends Strings {
   // TODO: implement AccountHint
   String get AccountHint =>"Confidentialité, sécurité, changement de numéro";
 
+  @override
+  // TODO: implement Dark
+  String get Dark => 'Sombre';
+
+  @override
+  // TODO: implement Light
+  String get Light => 'Léger';
+
+  @override
+  // TODO: implement Theme
+  String get Theme => 'Thème';
+
 }

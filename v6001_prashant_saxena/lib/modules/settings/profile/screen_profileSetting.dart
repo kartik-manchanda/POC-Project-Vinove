@@ -1,11 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 import 'package:v6001_prashant_saxena/widgets/item_profileBox.dart';
 
 import '../../../constants/color.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+var firebaseUser;
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  String _userName='';
+  @override
+  void initState() {
+    getCurrentUser();
+    _getUserName();
+    super.initState();
+  }
+
+  getCurrentUser() async {
+    firebaseUser = await FirebaseAuth.instance.currentUser?.uid;
+  }
+  Future<void> _getUserName() async {
+
+    var photo=FirebaseAuth.instance.currentUser?.phoneNumber;
+    print("photo$photo");
+
+
+
+
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +56,7 @@ class Profile extends StatelessWidget {
           'Profile',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
-        backgroundColor: appBarColor,
+        backgroundColor: Theme.of(context).appBarTheme.color,
       ),
       body: SizedBox(
         height: 400,
@@ -36,7 +65,7 @@ class Profile extends StatelessWidget {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
+              children: [
                 ProfileBox(
                   right: 1.0,
                   height: 45,
@@ -46,9 +75,9 @@ class Profile extends StatelessWidget {
                   size: 25,
                 ),
                 SettingOption(
-                  title: 'Prashant Saxena',
+                  title: FirebaseAuth.instance.currentUser!.displayName.toString(),
                   subtitle:
-                      'This is not your username or pin. This name will be visible to your WhatsApp contacts.',
+                  'This is not your username or pin. This name will be visible to your WhatsApp contacts.',
                   leading: Icon(
                     Icons.person,
                     color: Colors.grey,
@@ -60,20 +89,20 @@ class Profile extends StatelessWidget {
                   ),
                 ),
                 SettingOption(
-                  title: 'New User',
-                  subtitle: 'About',
+                  title: 'About',
+                  subtitle: 'Available',
                   leading: Icon(
                     Icons.info_outline,
                     color: Colors.grey,
                   ),
-                  onTap:null,
+                  onTap: null,
                   trailing: Icon(
                     Icons.edit,
                     color: tabColor,
                   ),
                 ),
                 SettingOption(
-                  title: '+91 1234567890',
+                  title: FirebaseAuth.instance.currentUser!.phoneNumber.toString(),
                   subtitle: 'Phone',
                   leading: Icon(
                     Icons.phone,

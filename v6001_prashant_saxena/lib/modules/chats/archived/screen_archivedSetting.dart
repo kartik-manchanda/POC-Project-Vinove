@@ -31,7 +31,8 @@ class ArchivedSetting extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: SettingOption(title: Strings.of(context)!.KeepChatsArchived, leading: null, trailing: MyToogleButton(), subtitle: Strings.of(context)!.ArchivedScreenMsg,),
+        child:
+        SettingOption(title: Strings.of(context)!.KeepChatsArchived, leading: null, trailing: MyToogleButton(), subtitle: Strings.of(context)!.ArchivedScreenMsg,),
       ),
     );
   }

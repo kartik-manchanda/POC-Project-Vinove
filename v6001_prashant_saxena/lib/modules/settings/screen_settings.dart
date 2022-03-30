@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:v6001_prashant_saxena/modules/settings/account/screen_accountSetting.dart';
 import 'package:v6001_prashant_saxena/modules/settings/chats/screen_chatsSetting.dart';
@@ -13,6 +14,7 @@ import 'package:v6001_prashant_saxena/widgets/item_metaLogo.dart';
 
 import '../../constants/color.dart';
 import '../../constants/localisation/strings.dart';
+import '../../constants/theme/buttton_theme.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -37,7 +39,7 @@ class SettingsScreen extends StatelessWidget {
         title:  Text(
           Strings.of(context)!.Settings, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
         ),
-        backgroundColor: appBarColor,
+        backgroundColor: Theme.of(context).appBarTheme.color,
       ),
       body:
       Column(
@@ -45,12 +47,12 @@ class SettingsScreen extends StatelessWidget {
           InkWell(onTap: (){
             Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const Profile(),
+                      builder: (context) => const ProfileScreen(),
                     ),
                   );
           },
             child: ListTile(
-              title: Text('Prashant Saxena',
+              title: Text(FirebaseAuth.instance.currentUser!.displayName.toString(),
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500
@@ -78,39 +80,40 @@ class SettingsScreen extends StatelessWidget {
           SettingOption(
               title: Strings.of(context)!.Account,
               subtitle:  Strings.of(context)!.AccountHint,
-              leading: Icon(Icons.vpn_key_rounded),
+              leading: Icon(Icons.vpn_key_rounded, color: Theme.of(context).iconTheme.color,),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AccountSetting(),),);}
           ),
           SettingOption(
               title: Strings.of(context)!.Chats,
               subtitle: Strings.of(context)!.ChatHint,
-              leading: Icon(Icons.chat_sharp),
+              leading: Icon(Icons.chat_sharp, color: Theme.of(context).iconTheme.color,),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatsSetting(),),);}
           ),
           SettingOption(
               title: Strings.of(context)!.Notification,
               subtitle: Strings.of(context)!.NotificationHint,
-              leading: Icon(Icons.notifications),
+              leading: Icon(Icons.notifications, color: Theme.of(context).iconTheme.color,),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NotificationSetting(),),);}
           ),
           SettingOption(
               title:  Strings.of(context)!.StorageAndData,
               subtitle:  Strings.of(context)!.StorageHint,
-              leading: Icon(Icons.storage),
+              leading: Icon(Icons.storage, color: Theme.of(context).iconTheme.color,),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const StorageSetting(),),);}
           ),
           SettingOption(
               title:  Strings.of(context)!.Help,
               subtitle:  Strings.of(context)!.HelpHint,
-              leading: Icon(Icons.help_outline_outlined),
+              leading: Icon(Icons.help_outline_outlined, color: Theme.of(context).iconTheme.color,),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HelpSettings(),),);}
           ),
           SettingOption(
               title: Strings.of(context)!.InviteFriend,
-              leading: Icon(Icons.call),
+              leading: Icon(Icons.call, color: Theme.of(context).iconTheme.color,),
               onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const  InvitePage(),),);}
           ),
-          MetaLogo()
+          MetaLogo(),
+
         ],
       ),
     );

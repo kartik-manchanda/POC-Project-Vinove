@@ -6,8 +6,8 @@ import 'package:v6001_prashant_saxena/widgets/item_settingOption.dart';
 import '../../constants/color.dart';
 import '../../constants/data.dart';
 import '../../constants/localisation/strings.dart';
-import '../../contacts/screens/screen_contact.dart';
 import '../../widgets/item_ChatList.dart';
+import '../contacts/screen_contact.dart';
 import 'chat_fire/chat_detail.dart';
 
 class Chats extends StatelessWidget {
