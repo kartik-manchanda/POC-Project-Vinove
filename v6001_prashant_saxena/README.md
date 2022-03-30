@@ -17,7 +17,7 @@ POC project WhatsApp Clone.
 ![chat](https://user-images.githubusercontent.com/55252616/160749665-da6bdcb8-7639-4a6b-a6cd-43ab996021de.png)
 
 > Theme Provider
-![Screenshot_1648612382](https://user-images.githubusercontent.com/55252616/160749680-0027067e-4427-4f26-a58e-ba5e08d07ea1.png)
+![theme](https://user-images.githubusercontent.com/55252616/160750090-f324061e-f987-44de-a9f4-6d322f8915a6.png)
 
 UI
 ![ui](https://user-images.githubusercontent.com/55252616/160749713-d1be72ed-66d5-467c-a093-6b90bc993791.png)
